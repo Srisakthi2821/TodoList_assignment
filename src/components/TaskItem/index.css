@@ -63,3 +63,6 @@
 .icon-button-edit-taskitem {
   all: unset;
 }
+.deleteicon{
+  max-height:20px;
+}

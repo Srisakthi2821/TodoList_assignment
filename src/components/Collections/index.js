@@ -82,6 +82,11 @@ class Collection extends Component {
     onSearched(event)
   }
 
+  deleteThetaskRt = id => {
+    const {detegingTaskItem} = this.props
+    detegingTaskItem(id)
+  }
+
   render() {
     const {todaysDayNumber, todaysMonth, todaysDay, todaysYear} = this.state
 
@@ -139,6 +144,7 @@ class Collection extends Component {
                     eachItem={eachitem}
                     onEdittask={this.onEdittask}
                     onCompletedTask={onCompletedTask}
+                    deleteThetaskRt={this.deleteThetaskRt}
                   />
                 ))}
               </div>

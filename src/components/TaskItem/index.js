@@ -1,13 +1,16 @@
 import './index.css'
 
 const TaskItem = props => {
-  const {eachItem, onCompletedTask, onEdittask} = props
+  const {eachItem, onCompletedTask, onEdittask, deleteThetaskRt} = props
   const {id, time, content} = eachItem
   const completedTask = () => {
     onCompletedTask(id)
   }
   const editTask = () => {
     onEdittask(id)
+  }
+  const ondeletingtask = () => {
+    deleteThetaskRt(id)
   }
   return (
     <div className="itemTaskCont">
@@ -33,6 +36,13 @@ const TaskItem = props => {
           aria-label="Mark as Edited"
         >
           <i className="fas fa-edit" />
+        </button>
+        <button onClick={ondeletingtask} className="icon-button-edit-taskitem">
+          <img
+            src="https://icon-library.com/images/delete-icon-png/delete-icon-png-18.jpg"
+            className="deleteicon"
+            alt="delete"
+          />
         </button>
       </div>
     </div>

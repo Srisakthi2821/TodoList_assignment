@@ -204,6 +204,21 @@ class TodoApp extends Component {
     this.setState({onChangingTimeStateInEdit: event.target.value})
   }
 
+  detegingTaskItem = id => {
+    const {currentLists} = this.state
+    const indexToRemove = currentLists.findIndex(item => item.id === id)
+
+    if (indexToRemove !== -1) {
+      this.setState(prevState => ({
+        currentLists: prevState.currentLists.filter(
+          (_, index) => index !== indexToRemove,
+        ),
+      }))
+    } else {
+      console.error(`Item with id ${id} not found in currentLists.`)
+    }
+  }
+
   render() {
     const {
       isDashboardActive,
@@ -241,6 +256,7 @@ class TodoApp extends Component {
               onCompletedTask={this.onCompletedTask}
               onSearched={this.onSearched}
               editingTask={this.editingTask}
+              detegingTaskItem={this.detegingTaskItem}
             />
           ) : (
             <div className="containerviewAllLists">
