@@ -1,4 +1,4 @@
-import {Component} from 'react'
+import React, {Component} from 'react'
 import Dayitem from '../DayItem'
 import TaskItem from '../TaskItem'
 import './index.css'
@@ -12,6 +12,7 @@ const dayNames = [
   'Friday',
   'Saturday',
 ]
+
 const monthNames = [
   'January',
   'February',
@@ -27,28 +28,43 @@ const monthNames = [
   'December',
 ]
 
-const date = new Date()
-const day = dayNames[date.getDay()]
-const dayNumber = date.getDate()
-const dayShortHand = day.slice(0, 3)
-const month = monthNames[date.getMonth()]
-const year = date.getFullYear()
+function getDayItem(offset) {
+  const currentDate = new Date()
+  currentDate.setDate(currentDate.getDate() + offset)
+  const dayName = dayNames[currentDate.getDay()]
+  const dayNum = currentDate.getDate()
+  const monthName = monthNames[currentDate.getMonth()]
+  const yearNum = currentDate.getFullYear()
+  const secondDayShorthand = dayName.slice(0, 3)
 
+  return {
+    dayName,
+    dayNum,
+    monthName,
+    yearNum,
+    secondDayShorthand,
+  }
+}
+// Predefined list of the next seven days
+const nextSevenDays = [
+  getDayItem(0),
+  getDayItem(1),
+  getDayItem(2),
+  getDayItem(3),
+  getDayItem(4),
+  getDayItem(5),
+  getDayItem(6),
+]
 class Collection extends Component {
   constructor(props) {
     super(props)
+    const date = new Date()
     this.state = {
-      todaysDayNumber: dayNumber,
-      todaysMonth: month,
-      todaysDay: day,
-      todaysYear: year,
-      todayShortHand: dayShortHand,
-      nextSevenDays: [],
+      todaysDayNumber: date.getDate(),
+      todaysMonth: monthNames[date.getMonth()],
+      todaysDay: dayNames[date.getDay()],
+      todaysYear: date.getFullYear(),
     }
-  }
-
-  componentDidMount() {
-    this.generateNextSevenDays()
   }
 
   onEdittask = id => {
@@ -56,49 +72,21 @@ class Collection extends Component {
     editingTask(id)
   }
 
-  generateNextSevenDays = () => {
-    const nextSevenDays = []
-    for (let i = 0; i < 7; i++) {
-      const currentDate = new Date()
-      currentDate.setDate(currentDate.getDate() + i)
-      const dayName = dayNames[currentDate.getDay()]
-      const dayNum = currentDate.getDate()
-      const monthName = monthNames[currentDate.getMonth()]
-      const secondDayShorthand = dayName.slice(0, 3)
-      const yearNum = currentDate.getFullYear()
-      nextSevenDays.push({
-        dayName,
-        dayNum,
-        monthName,
-        yearNum,
-        secondDayShorthand,
-      })
-    }
-    this.setState({nextSevenDays})
-  }
-
   onAddTaskEnable = () => {
     const {enablingTaskBar} = this.props
     enablingTaskBar()
   }
 
-  searchList = () => {
+  searchList = event => {
     const {onSearched} = this.props
-    const onChangingSearch = onSearched
-    onChangingSearch(event)
+    onSearched(event)
   }
 
   render() {
-    const {
-      todaysDayNumber,
-      todaysMonth,
-      todaysDay,
-      todaysYear,
-      todayShortHand,
-      nextSevenDays,
-      tasksList,
-    } = this.state
+    const {todaysDayNumber, todaysMonth, todaysDay, todaysYear} = this.state
+
     const {listDefaults, onCompletedTask} = this.props
+
     return (
       <div className="container-collections">
         <div className="container_searches">
@@ -108,12 +96,12 @@ class Collection extends Component {
             className="searchbar"
             placeholder="Search Task . . . ."
           />
-          <i className="far fa-bell"></i>
+          <i className="far fa-bell" />
         </div>
         <div className="container_todo_intro">
           <div className="todoIntro_part1">
             <h1 className="intro_todo">
-              Organize your task More <br />
+              Organize your tasks More <br />
               Easily With
               <span className="logoName"> ListFly</span>
             </h1>
@@ -124,7 +112,7 @@ class Collection extends Component {
           <div className="todoIntro_part2">
             <div className="todayDate_card">
               <p className="date_todointro">
-                <i className="far fa-calendar-alt"></i> {todaysDayNumber}th{' '}
+                <i className="far fa-calendar-alt" /> {todaysDayNumber}th{' '}
                 {todaysMonth} {todaysYear}
               </p>
               <h1 className="day_todoIntro">{todaysDay}</h1>
@@ -146,7 +134,7 @@ class Collection extends Component {
                 </ul>
               </div>
               <div className="taskscollection">
-                {listDefaults.map(eachitem => (
+                {listDefaults.map((eachitem, index) => (
                   <TaskItem
                     eachItem={eachitem}
                     onEdittask={this.onEdittask}

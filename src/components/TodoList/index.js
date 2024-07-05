@@ -54,9 +54,10 @@ class TodoApp extends Component {
 
   updateUname = () => {
     const {onChangeUName} = this.state
-    onChangeUName.length < 1
-      ? window.alert('Please Enter Some Name !')
-      : this.setState({userName: onChangeUName, isLoginSuccess: true})
+    const checkName =
+      onChangeUName.length < 1
+        ? window.alert('Please Enter Some Name !')
+        : this.setState({userName: onChangeUName, isLoginSuccess: true})
   }
 
   onLogout = () => {
@@ -198,7 +199,7 @@ class TodoApp extends Component {
   onChangeContentInTodo = event => {
     this.setState({onChangingstateContentInTodo: event.target.value})
   }
-  
+
   onChangingFunctinoTimeInEdit = event => {
     this.setState({onChangingTimeStateInEdit: event.target.value})
   }

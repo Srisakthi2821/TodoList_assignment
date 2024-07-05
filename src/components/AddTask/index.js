@@ -8,10 +8,10 @@ const AddTask = props => {
     onAddingTask,
     isaddTaskBarShown,
   } = props
-  const inputTimeChanging = () => {
+  const inputTimeChanging = event => {
     getTimeINput(event)
   }
-  const changingTaskDesc = () => {
+  const changingTaskDesc = event => {
     getTaskDesc(event)
   }
   const addingTaskButton = () => {
@@ -42,7 +42,7 @@ const AddTask = props => {
         className="timing_item_input"
       />
       <div className="buttonContainer_add">
-        <div className="buttonBuy" type="button" onClick={addingTaskButton}>
+        <button className="buttonBuy" type="button" onClick={addingTaskButton}>
           <img
             className="imageButton"
             src="http://www.pngplay.com/wp-content/uploads/2/Truck-PNG-Pic-Background.png"
@@ -54,10 +54,10 @@ const AddTask = props => {
             src="https://www.freeiconspng.com/thumbs/courses-icon/courses-icon-4.png"
           />
           <p className="completedtxt">
-            Ready,Click <i className="fas fa-check-circle"></i>
+            Ready,Click <i className="fas fa-check-circle" />
             <br />
           </p>
-        </div>
+        </button>
       </div>
     </div>
   )

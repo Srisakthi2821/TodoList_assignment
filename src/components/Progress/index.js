@@ -14,7 +14,7 @@ const Progress = props => {
   return (
     <div className="contaiener_progress">
       <div className="userContainer">
-        <div className="profileUser"></div>
+        <div className="profileUser" />
         <h1 className="userNameText">Hi {userName} !</h1>
       </div>
       <div className="PerformanceContainer">
@@ -41,7 +41,8 @@ const Progress = props => {
                 aria-valuemin="0"
                 aria-valuemax="100"
                 style={progressCompleted}
-              ></div>
+                aria-label={`Progress in progress: ${progressBarstate['--value']}%`}
+              />
             </div>
           </div>
           <div className="item_performance_container">
@@ -61,7 +62,8 @@ const Progress = props => {
                 aria-valuemin="0"
                 aria-valuemax="100"
                 style={progressBarstate}
-              ></div>
+                aria-label={`Progress in progress: ${progressBarstate['--value']}%`}
+              />
             </div>
           </div>
         </div>

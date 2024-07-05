@@ -31,9 +31,9 @@
   color: white;
 }
 
-.icons_item{
-  display:flex;
-  align-items:cente;
+.icons_item {
+  display: flex;
+  align-items: cente;
 }
 .fa-check {
   padding: 10px;
@@ -48,16 +48,18 @@
   background: rgb(26, 188, 26);
 }
 .fa-edit {
-  display:none;
+  display: none;
   color: #3956d8;
-  padding:8px 7px 8px 11px;
-
+  padding: 8px 7px 8px 11px;
 }
-.fa-edit:hover{
-  background:rgb(58, 138, 208);
-  border-radius:50%;
+.fa-edit:hover {
+  background: rgb(58, 138, 208);
+  border-radius: 50%;
 }
 .itemTaskCont:hover .fa-edit {
   display: block;
   color: rgb(255, 255, 255);
+}
+.icon-button-edit-taskitem {
+  all: unset;
 }

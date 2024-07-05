@@ -1,7 +1,7 @@
 .container_main_addTask {
   position: fixed;
   top: 30%;
-  right: 40%;
+  right: 45%;
   background-color: rgba(0, 0, 0, 0.921);
   padding: 30px;
   border: 1px solid rgb(84, 84, 84);
@@ -252,6 +252,6 @@
     opacity: 1;
   }
 }
-.hideAddTask{
-  display:none;
+.hideAddTask {
+  display: none;
 }

@@ -2,7 +2,7 @@ import './index.css'
 
 const Login = props => {
   const {gettingUserName, updateUname, isLoginSuccess} = props
-  const namegetteingfunction = () => {
+  const namegetteingfunction = event => {
     gettingUserName(event)
   }
   const submitName = () => {
@@ -12,7 +12,7 @@ const Login = props => {
 
   return (
     <div className={`container_login ${loginStatus}`}>
-      <div className="container_Logo"></div>
+      <div className="container_Logo" />
       <input
         type="text"
         placeholder="Enter Your Name"

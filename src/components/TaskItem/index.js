@@ -13,14 +13,27 @@ const TaskItem = props => {
     <div className="itemTaskCont">
       <div className="part1_taskItem">
         <p className="timetask">
-          <i className="far fa-clock"></i> {time}
+          <i className="far fa-clock" /> {time}
         </p>
         <p className="descriptiontask">{content}</p>
       </div>
 
       <div className="icons_item">
-        <i onClick={completedTask} className="fas fa-check"></i>
-        <i className="fas fa-edit" onClick={editTask}></i>
+        <button
+          onClick={completedTask}
+          className="icon-button-edit-taskitem"
+          aria-label="Mark as Completed"
+        >
+          <i className="fas fa-check" />
+        </button>
+
+        <button
+          onClick={editTask}
+          className="icon-button-edit-taskitem"
+          aria-label="Mark as Edited"
+        >
+          <i className="fas fa-edit" />
+        </button>
       </div>
     </div>
   )

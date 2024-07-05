@@ -16,15 +16,15 @@ const EditTask = props => {
   const lastTaskItem = parsingEditTaskItem[parsingEditTaskItem.length - 1]
   const {id, content, time} = lastTaskItem[0]
   const editIsShown = isEditBarShown ? '' : 'editorHide'
-  let editedContent = content
-  let editedTiming = ''
-  const onChangeEditionContent = () => {
+  const editedContent = content
+  const editedTiming = ''
+  const onChangeEditionContent = event => {
     onChangeContentInTodo(event)
   }
   const onEditButtonPress = () => {
     onEditSuccess(id)
   }
-  const onChangeEditTiming = () => {
+  const onChangeEditTiming = event => {
     onChangingFunctinoTimeInEdit(event)
   }
   return (
