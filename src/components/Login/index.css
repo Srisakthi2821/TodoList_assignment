@@ -1,0 +1,37 @@
+.container_login {
+  padding: 20px;
+  position: fixed;
+  top: 30%;
+  background-color: rgba(0, 0, 0, 0.91);
+  right: 45%;
+  border: 1px solid rgb(107, 106, 106);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.container_Logo {
+  max-height: 100px;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  background-image: url('https://img.freepik.com/free-vector/isolated-young-handsome-man-different-poses-white-background-illustration_632498-855.jpg?t=st=1720086017~exp=1720089617~hmac=b7708f80e522b5e95a9d0211211a00f1cd3089cee5b2ba66438c335151812128&w=740');
+  background-position: center;
+  background-size: 150px;
+}
+.nameInput {
+  all: unset;
+  border-radius: 5px;
+  border: 1px solid rgb(33, 33, 33);
+  background-image: url('https://vectorified.com/images/person-icon-white-10.png');
+  background-position: 10px center;
+  background-repeat: no-repeat;
+  background-size: 22px;
+  padding: 0.6rem;
+  color: white;
+  padding-left: 38px;
+  font-size: 18px;
+  background-color: black;
+}
+.hideLogin {
+  display: none;
+}

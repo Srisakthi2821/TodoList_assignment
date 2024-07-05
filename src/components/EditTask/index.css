@@ -1,0 +1,90 @@
+.container_task_edit {
+  position: fixed;
+  top: 30%;
+  right: 45%;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid rgb(43, 43, 43);
+  background: white;
+}
+.editTask_input {
+  all: unset;
+  background-color: black;
+  color: white;
+  padding: 10px 13px;
+  border-radius: 6px;
+  font-size: 18px;
+  background-image: url('https://www.freeiconspng.com/uploads/description-white-pencil-16.png');
+  background-position: 10px center;
+  background-repeat: no-repeat;
+  background-size: 28px;
+  padding-left: 45px;
+}
+.editTask_input:focus {
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+}
+.timeEditor {
+  font-size: 18px;
+  padding: 7px 13px;
+  width: 100%;
+  margin-top: 10px;
+}
+.timeEditor:focus {
+  border: 1px solid white;
+  background: black;
+  color: white;
+}
+.editorHide {
+  display: none;
+}
+
+.button_edit_task {
+  width: 7em;
+  margin: 20px;
+  position: relative;
+  height: 2.5em;
+  border: 3px ridge rgb(18, 18, 18);
+  outline: none;
+  background-color: transparent;
+  color: black;
+  transition: 1s;
+  border-radius: 0.3em;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.button_edit_task::after {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 3%;
+  width: 95%;
+  height: 40%;
+  background-color: rgb(255, 255, 255);
+  transition: 0.5s;
+  transform-origin: center;
+}
+
+.button_edit_task::before {
+  content: '';
+  transform-origin: center;
+  position: absolute;
+  top: 80%;
+  left: 3%;
+  width: 95%;
+  height: 40%;
+  background-color: rgb(255, 255, 255);
+  transition: 0.5s;
+}
+
+.button_edit_task:hover::before,
+.button_edit_task:hover::after {
+  transform: scale(0);
+}
+
+.button_edit_task:hover {
+  box-shadow: inset 0px 0px 10px rgb(0, 0, 0);
+}

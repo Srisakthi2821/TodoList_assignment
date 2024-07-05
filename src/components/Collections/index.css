@@ -1,0 +1,194 @@
+.container-collections {
+  min-width: 55%;
+  padding: 20px;
+}
+.container_searches {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  justify-content: space-between;
+  gap: 20px;
+}
+.searchbar {
+  all: unset;
+  background-color: rgba(44, 44, 44, 0.334);
+  color: white;
+  width: 100%;
+  border-radius: 35px;
+  background-image: url('https://icon-library.com/images/white-search-icon-transparent-background/white-search-icon-transparent-background-1.jpg');
+  background-position: 10px center;
+  background-repeat: no-repeat;
+  background-size: 28px;
+  padding: 0.6rem;
+  padding-left: 45px;
+  border: 1px solid rgb(85, 85, 85);
+}
+.searchbar:focus {
+  background: white;
+  color: black;
+}
+.fa-bell {
+  color: white;
+}
+/*part1*/
+.todoIntro_part1 {
+  margin: 10px;
+  padding: 10px;
+}
+.intro_todo {
+  font-size: 2rem;
+  color: white;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  letter-spacing: 1px;
+}
+.logoName {
+  font-size: 2.2rem;
+  font-family: 'Josefin Sans', sans-serif;
+  color: rgb(232, 3, 136);
+}
+/*add task button */
+.addTaskButton {
+  width: 7em;
+  margin: 20px;
+  position: relative;
+  height: 2.5em;
+  border: 3px ridge rgb(232, 3, 136);
+  outline: none;
+  background-color: transparent;
+  color: white;
+  transition: 1s;
+  border-radius: 0.3em;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.addTaskButton::after {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 3%;
+  width: 95%;
+  height: 40%;
+  background-color: black;
+  transition: 0.5s;
+  transform-origin: center;
+}
+
+.addTaskButton::before {
+  content: '';
+  transform-origin: center;
+  position: absolute;
+  top: 80%;
+  left: 3%;
+  width: 95%;
+  height: 40%;
+  background-color: black;
+  transition: 0.5s;
+}
+
+.addTaskButton:hover::before,
+.addTaskButton:hover::after {
+  transform: scale(0);
+}
+
+.addTaskButton:hover {
+  box-shadow: inset 0px 0px 10px rgb(232, 3, 136);
+}
+.heading_viewAllTasks {
+  font-size: 20px;
+  color: rgb(232, 3, 136);
+}
+/*part2*/
+.todoIntro_part2 {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.container_todo_intro {
+  display: flex;
+}
+.todayDate_card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  min-height: 100px;
+  min-width: 120px;
+  margin: 10px;
+  padding: 22px 10px;
+  background: rgb(255, 255, 255);
+  border-radius: 6px;
+  box-shadow: 0 4px 30px rgba(118, 116, 116, 0.1);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4.1px);
+  border: 1px solid rgba(149, 149, 149, 0.3);
+}
+.date_todointro {
+  font-size: 14px;
+  color: rgb(8, 8, 8);
+}
+.day_todoIntro {
+  font-size: 20px;
+  font-weight: 600;
+  color: rgb(6, 6, 6);
+}
+.threedots_date {
+  all: unset;
+  font-size: 60px;
+  letter-spacing: 1px;
+  color: white;
+  margin-bottom: -20px;
+}
+.mytaskHeading {
+  font-size: 20px;
+  color: white;
+}
+.dateallContainer_at {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.list_date_all_tasks {
+  display: flex;
+}
+.taskscollection {
+  margin: 10px 0px;
+  overflow-y: auto;
+  max-height: 40vh;
+  scroll-behavior: smooth;
+  scroll-margin: thin;
+}
+/* Hide scrollbar by default */
+.taskscollection::-webkit-scrollbar {
+  width: 0;
+}
+
+.taskscollection::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.taskscollection::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  border-radius: 6px;
+  border: 3px solid transparent;
+  background-clip: content-box;
+}
+.taskscollection:hover::-webkit-scrollbar {
+  width: 12px;
+}
+
+.taskscollection:hover::-webkit-scrollbar-thumb {
+  background-color: white;
+}
+
+.taskscollection {
+  scrollbar-width: none;
+}
+
+.taskscollection:hover {
+  scrollbar-width: thin;
+  scrollbar-color: white rgb(49, 49, 49);
+}

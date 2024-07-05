@@ -1,0 +1,10 @@
+.container_completedItem {
+  padding: 7px 12px;
+}
+.para_completedItemTask {
+  font-size: 18px;
+  color: white;
+  text-decoration: line-through;
+  text-decoration-color: rgb(78, 78, 78);
+  text-decoration-thickness: 2px;
+}

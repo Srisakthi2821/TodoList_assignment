@@ -1,0 +1,16 @@
+.containerviewAllLists {
+  min-width: 60%;
+  padding: 20px;
+  margin-bottom:20px;
+}
+.listitem_all_items {
+  padding: 6px 8px;
+}
+.para_content_all_tasks {
+  font-size: 18px;
+  color: white;
+}
+.time_all_tasks {
+  font-size: 14px;
+  color: rgb(134, 134, 134);
+}

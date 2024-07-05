@@ -1,0 +1,172 @@
+.contaiener_progress {
+  background: rgb(41, 41, 41);
+  width: 100%;
+  min-height: 9vh;
+  padding: 20px;
+}
+.userContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.name_user {
+  color: white;
+}
+.profileUser {
+  max-height: 100px;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  background-image: url('https://img.freepik.com/free-vector/isolated-young-handsome-man-different-poses-white-background-illustration_632498-855.jpg?t=st=1720086017~exp=1720089617~hmac=b7708f80e522b5e95a9d0211211a00f1cd3089cee5b2ba66438c335151812128&w=740');
+  background-position: center;
+  background-size: 150px;
+}
+.userNameText {
+  color: white;
+}
+.heading_performance {
+  color: rgb(232, 3, 136);
+  font-size: 1.5rem;
+}
+.card_performance {
+  background: black;
+  padding: 12px;
+  border-radius: 7px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.text_date_totalTasks,
+.tTaskText {
+  font-size: 1rem;
+  color: white;
+  font-weight: 500;
+}
+.tTaskText {
+  font-size: 0.9rem;
+  color: rgb(205, 205, 205);
+}
+.totalTasks {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: rgb(255, 255, 255);
+}
+
+.item_performance_container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px 0px;
+  gap: 10px;
+}
+.progress_completed {
+  color: white;
+  font-size: 1rem;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.completedCount {
+  color: rgb(232, 3, 136);
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+/*progress*/
+@keyframes progress {
+  0% {
+    --percentage: 0;
+  }
+  100% {
+    --percentage: var(--value);
+  }
+}
+@property --percentage {
+  syntax: '<number>';
+  inherits: true;
+  initial-value: 0;
+}
+
+[role='progressbar'] {
+  --percentage: var(--value);
+  --primary: rgb(232, 3, 136);
+  --secondary: rgb(255, 255, 255);
+  --size: 100%;
+  animation: progress 1s 0.5s ease;
+  width: var(--size);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+}
+
+[role='progressbar']::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: conic-gradient(
+    var(--primary) calc(var(--percentage) * 1%),
+    var(--secondary) 0
+  );
+  mask: radial-gradient(white 55%, transparent 0);
+  mask-mode: alpha;
+  -webkit-mask: radial-gradient(#0000 55%, #000 0);
+  -webkit-mask-mode: alpha;
+}
+
+[role='progressbar']::after {
+  counter-reset: percentage var(--value);
+  content: counter(percentage) '%';
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: calc(var(--size) / 5);
+  color: var(--primary);
+}
+.progressbarStyling {
+  height: 100px;
+  width: 100px;
+  font-size: 100px;
+}
+.completedTasks_heading {
+  color: rgb(232, 3, 136);
+  font-size: 1.5rem;
+  margin-top: 10px;
+}
+.completetItemsContaner {
+  max-height: 20vh;
+  overflow-y: auto;
+}
+/* Hide scrollbar by default */
+.completetItemsContaner::-webkit-scrollbar {
+  width: 0;
+}
+
+.completetItemsContaner::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.completetItemsContaner::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  border-radius: 6px;
+  border: 3px solid transparent;
+  background-clip: content-box;
+}
+
+.completetItemsContaner:hover::-webkit-scrollbar {
+  width: 12px;
+}
+
+.completetItemsContaner:hover::-webkit-scrollbar-thumb {
+  background-color: white;
+}
+
+.completetItemsContaner {
+  scrollbar-width: none;
+}
+
+.completetItemsContaner:hover {
+  scrollbar-width: thin;
+  scrollbar-color: white rgb(49, 49, 49);
+}
